@@ -18,6 +18,9 @@ button {
   justify-content: center;
   height: 45px;
 }
+.summary {
+  align-self: center;
+}
 body {
   background: #ffa5009e;
 }
@@ -34,7 +37,6 @@ body {
   border-radius: 20px;
 }
 /*header*/
-
 
 .header {
   position: relative;
@@ -66,30 +68,37 @@ body {
 }
 
 /*navigation*/
+.navigation {
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  background-color: white;
+  z-index: 10;
+}
 .nav_top_menu {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
   align-items: center;
+  justify-content: space-between;
 }
 .nav_menu {
   display: flex;
   gap: 15px;
 }
 .nav_menu_item {
-  padding: 10px;
+  padding: 10px 25px;
   border-radius: 18px;
+  align-self: center;
 }
 .nav_menu_item:hover {
-  padding: 10px;
-  border-radius: 18px;
   background-color: #b8b8b862;
 }
 .nav_menu_item--active {
   background-color: black;
   color: white;
-  padding: 10px;
+  padding: 10px 25px;
   border-radius: 18px;
-  width: 40px;
+  align-self: center;
 }
 .menu_item_text {
   font-weight: bold;
@@ -101,23 +110,27 @@ body {
   display: grid;
   margin: 50px 0px 100px;
   grid-template-columns: repeat(4, auto);
+  justify-content: space-between;
+  gap: 40px;
 }
 .title_shop {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 28px;
   color: black;
 }
 
 /*card*/
-
 .shop_card {
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
   border-radius: 10px;
-  width: 280px;
-  height: 467px;
+  width: 240px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  padding: 10px;
 }
+
 .title_card {
   position: relative;
   margin-top: 10px;
@@ -125,15 +138,12 @@ body {
   font-weight: 700;
   text-align: center;
 }
+
 .image {
   position: relative;
-  overflow: hidden;
-  width: 260px;
-  left: 15px;
-}
-.img_card {
-  position: relative;
-  margin-top: 10px;
+  max-width: 100%;
+  height: auto;
+  left: 3px;
 }
 .setting_card {
   position: relative;
@@ -182,7 +192,8 @@ body {
 }
 .pay_ruble {
   font-weight: 600;
-  font-size: 28px;
+  font-size: 24px;
+  align-self: center;
 }
 button {
   list-style: none;

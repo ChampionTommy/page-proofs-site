@@ -1,0 +1,201 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+button {
+  border: none;
+  padding: 5px;
+  width: 150px;
+  border-radius: 15px;
+}
+.cart {
+  display: flex;
+  background-color: #ff7300;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  justify-content: center;
+  height: 45px;
+}
+body {
+  background: #ffa5009e;
+}
+.container {
+  position: relative;
+  background-color: white;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0px 40px;
+}
+.main-app {
+  background-color: white;
+  margin: 50px 50px;
+  border-radius: 20px;
+}
+/*header*/
+
+
+.header {
+  position: relative;
+}
+.header::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-bottom: 1px solid #b8b8b859;
+  top: 108px;
+  left: 40px;
+  width: 1235px;
+}
+.section-header_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 30px;
+}
+.description {
+  color: #b8b8b8;
+}
+.logo_section {
+  display: flex;
+}
+.logo {
+  width: 50px;
+  margin-right: 5px;
+}
+
+/*navigation*/
+.nav_top_menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav_menu {
+  display: flex;
+  gap: 15px;
+}
+.nav_menu_item {
+  padding: 10px;
+  border-radius: 18px;
+}
+.nav_menu_item:hover {
+  padding: 10px;
+  border-radius: 18px;
+  background-color: #b8b8b862;
+}
+.nav_menu_item--active {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 18px;
+  width: 40px;
+}
+.menu_item_text {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/*shop*/
+.shop_card_section {
+  display: grid;
+  margin: 50px 0px 100px;
+  grid-template-columns: repeat(4, auto);
+}
+.title_shop {
+  font-weight: bold;
+  font-size: 24px;
+  color: black;
+}
+
+/*card*/
+
+.shop_card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 280px;
+  height: 467px;
+}
+.title_card {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+.image {
+  position: relative;
+  overflow: hidden;
+  width: 260px;
+  left: 15px;
+}
+.img_card {
+  position: relative;
+  margin-top: 10px;
+}
+.setting_card {
+  position: relative;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.block_settings {
+  position: relative;
+}
+.group_settting {
+  position: relative;
+  display: flex;
+  justify-content: start;
+}
+.item_settings {
+  text-align: center;
+  flex: 1;
+  padding: 5px;
+  margin: 5px;
+}
+.item_settings:focus {
+  position: sticky;
+  flex: 1;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.text_settings {
+  position: relative;
+  font-size: 12px;
+  font-weight: 700;
+  color: #00000086;
+  text-transform: uppercase;
+}
+.text_settings:focus {
+  position: relative;
+  color: black;
+  font-size: 12px;
+  font-weight: 700;
+}
+.buy_card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.pay_ruble {
+  font-weight: 600;
+  font-size: 28px;
+}
+button {
+  list-style: none;
+  border: none;
+}
+.add_cart {
+  width: 130px;
+  height: 40px;
+  background: #f86300;
+  border-radius: 15px;
+}
+.text_addcart {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}

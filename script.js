@@ -1,6 +1,7 @@
 function createNode(element) {
   return document.createElement(element);
 }
+
 function append(parent, el) {
   return parent.appendChild(el);
 }
@@ -10,9 +11,9 @@ fetch('https://6243cf353da3ac772b06e729.mockapi.io/food/')
   .then((response) => response.json())
   .then(function (data) {
     return data.map(function (dataCard) {
-      let span = createNode('span');
-      span.innerHTML = `
-        <div id="card" class="shop_card">
+      let div = createNode('div');
+      div.className = 'shop_card';
+      div.innerHTML = `
           <div class="img_card">
             <img class="image" src="https://dodopizza-a.akamaihd.net/static/Img/Products/eb6d128bbcd340e98fd4f14b377e769f_292x292.jpeg" alt="pizza">
           </div>
@@ -50,8 +51,7 @@ fetch('https://6243cf353da3ac772b06e729.mockapi.io/food/')
                   <div class="text_addcart">Добавить</div>
                 </button>
             </div>
-            </div>
         `;
-      append(ul, span);
+      append(ul, div);
     });
   });

@@ -3,58 +3,49 @@
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
+input[type='radio'] {
+  position: absolute;
+  left: 0;
+}
 button {
+  cursor: pointer;
   border: none;
+  width: 100px;
   padding: 5px;
-  width: 150px;
   border-radius: 15px;
 }
-.cart {
-  display: flex;
-  background-color: #ff7300;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  justify-content: center;
-  height: 45px;
-}
-.summary {
-  align-self: center;
-}
+
 body {
   background: #ffa5009e;
 }
 .container {
   position: relative;
-  background-color: white;
-  width: 1200px;
   margin: 0 auto;
-  padding: 20px 0px 40px;
 }
 .main-app {
   background-color: white;
   margin: 50px 50px;
   border-radius: 20px;
+  padding-bottom: 50px;
 }
 /*header*/
-
 .header {
   position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 .header::after {
   content: '';
   display: block;
   position: absolute;
   border-bottom: 1px solid #b8b8b859;
-  top: 108px;
-  left: 40px;
-  width: 1235px;
+  width: 100%;
+  bottom: 0;
 }
 .section-header_top {
-  display: flex;
+  display: grid;
   justify-content: space-between;
-  align-items: center;
-  margin: 0px 30px;
+  grid-template-columns: repeat(2, auto);
 }
 .description {
   color: #b8b8b8;
@@ -69,20 +60,23 @@ body {
 
 /*navigation*/
 .navigation {
-  width: 100%;
   position: sticky;
-  top: 0px;
   background-color: white;
-  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  top: 0px;
+  z-index: 1;
 }
 .nav_top_menu {
   display: grid;
-  grid-template-columns: repeat(2, auto);
   align-items: center;
   justify-content: space-between;
+  grid-template-columns: repeat(2, auto);
 }
 .nav_menu {
-  display: flex;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(10, auto);
   gap: 15px;
 }
 .nav_menu_item {
@@ -94,24 +88,27 @@ body {
   background-color: #b8b8b862;
 }
 .nav_menu_item--active {
-  background-color: black;
+  align-self: center;
   color: white;
+  background-color: black;
   padding: 10px 25px;
   border-radius: 18px;
-  align-self: center;
 }
 .menu_item_text {
   font-weight: bold;
   font-size: 20px;
 }
-
+.nav_sort {
+  font-weight: bold;
+  font-size: 15px;
+}
 /*shop*/
-.shop_card_section {
+.shop_section {
   display: grid;
-  margin: 50px 0px 100px;
-  grid-template-columns: repeat(4, auto);
   justify-content: space-between;
-  gap: 40px;
+  grid-template-columns: repeat(4, auto);
+  margin: 50px 0px 100px;
+  gap: 30px;
 }
 .title_shop {
   font-weight: bold;
@@ -123,9 +120,7 @@ body {
 .shop_card {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
   border-radius: 10px;
-  width: 240px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   padding: 10px;
@@ -133,16 +128,16 @@ body {
 
 .title_card {
   position: relative;
+  text-align: center;
   margin-top: 10px;
   margin-bottom: 20px;
   font-weight: 700;
-  text-align: center;
 }
 
 .image {
   position: relative;
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
   left: 3px;
 }
 .setting_card {
@@ -160,24 +155,19 @@ body {
   justify-content: start;
 }
 .item_settings {
+  position: relative;
   text-align: center;
   flex: 1;
   padding: 5px;
   margin: 5px;
 }
-.item_settings:focus {
-  position: sticky;
-  flex: 1;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
+
 .text_settings {
   position: relative;
+  text-transform: uppercase;
   font-size: 12px;
   font-weight: 700;
   color: #00000086;
-  text-transform: uppercase;
 }
 .text_settings:focus {
   position: relative;
@@ -187,26 +177,49 @@ body {
 }
 .buy_card {
   display: flex;
-  justify-content: space-between;
   flex-direction: row;
+  justify-content: space-between;
 }
 .pay_ruble {
+  align-self: center;
   font-weight: 600;
   font-size: 24px;
-  align-self: center;
-}
-button {
-  list-style: none;
-  border: none;
 }
 .add_cart {
-  width: 130px;
   height: 40px;
-  background: #f86300;
+  background-color: #f86300;
   border-radius: 15px;
 }
+.add_cart:hover {
+  background-color: #f86300c2;
+}
+.add_cart:active {
+  background-color: #f86300de;
+}
 .text_addcart {
+  color: white;
   font-size: 14px;
   font-weight: 600;
-  color: white;
 }
+
+/*cart.html*/
+
+/*cart button*/
+.cart {
+  cursor: pointer;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 18px;
+  width: 100px;
+  height: 100%;
+  color: white;
+  background-color: #ff7300;
+  padding: 5px;
+  border-radius: 15px;
+}
+.summary {
+  align-self: center;
+}
+

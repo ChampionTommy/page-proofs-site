@@ -1,15 +1,14 @@
 function createNode(element) {
   return document.createElement(element);
 }
-
 function append(parent, el) {
   return parent.appendChild(el);
 }
-const ul = document.getElementById('card');
 
-fetch('https://6243cf353da3ac772b06e729.mockapi.io/food/')
+const ul = document.getElementById('card');
+fetch('https://6243cf353da3ac772b06e729.mockapi.io/api/v1/food/')
   .then((response) => response.json())
-  .then(function (data) {
+  .then((data) => {
     return data.map(function (dataCard) {
       let div = createNode('div');
       div.className = 'shop_card';
@@ -23,35 +22,40 @@ fetch('https://6243cf353da3ac772b06e729.mockapi.io/food/')
             <div class="setting_card">
               <div class="block_settings">
                 <div class="group_settting">
-                  <div tabindex="0" class="item_settings">
-                    <div class="text_settings">${dataCard.settings.settingsOne[0]}</div>
+                  <div class="item_settings">
+                    <input class="select_setting" checked="checked" type="radio" id="settingsOne" name="selectMenu">
+                    <label class="text_settings" for="settingsOne">${dataCard.settings.settingsOne[0]}</label>
                   </div>
-                  <div tabindex="0" class="item_settings">
-                    <div class="text_settings">${dataCard.settings.settingsOne[1]}</div>
+                  <div class="item_settings">
+                    <input type="radio" id="settingsTwo" name="selectMenu">
+                    <label class="text_settings" for="settingsTwo">${dataCard.settings.settingsOne[1]}</label>
                   </div>
                 </div>
               </div>
               <div class="block_settings">
                 <div class="group_settting">
-                    <div tabindex="0" class="item_settings">
-                      <div class="text_settings">${dataCard.settings.settingsTwo[0]} см.</div>
-                    </div>
-                    <div tabindex="0" class="item_settings">
-                      <div class="text_settings">${dataCard.settings.settingsTwo[1]} см.</div>
-                    </div>
-                    <div tabindex="0" class="item_settings">
-                      <div class="text_settings">${dataCard.settings.settingsTwo[2]} см.</div>
-                  </div>
+                <div class="item_settings">
+                  <input type="radio" id="select_size_one" name="selectMenu_size">
+                  <label class="text_settings" for="select_size_one">${dataCard.settings.settingsTwo[0]} см.</label>
+                </div>
+                <div class="item_settings">
+                  <input type="radio" id="select_size_two" name="selectMenu_size">
+                  <label class="text_settings" for="select_size_two">${dataCard.settings.settingsTwo[1]} см.</label>
+                </div>
+                <div class="item_settings">
+                  <input type="radio" id="select_size_three" name="selectMenu_size">
+                  <label class="text_settings" for="select_size_three">${dataCard.settings.settingsTwo[2]} см.</label>
+                </div>
                 </div>
               </div>
             </div>
             <div class="buy_card">
               <div class="pay_ruble">от ${dataCard.summary} ₽</div>
-                <button class="add_cart">
+                <button type="button" onclick="alert(${dataCard.id})" class="add_cart">
                   <div class="text_addcart">Добавить</div>
                 </button>
             </div>
         `;
       append(ul, div);
-    });
-  });
+    })
+  })

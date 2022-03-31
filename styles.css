@@ -21,6 +21,7 @@ body {
 .container {
   position: relative;
   margin: 0 auto;
+  max-width: 1140px;
 }
 .main-app {
   background-color: white;
@@ -221,5 +222,46 @@ body {
 }
 .summary {
   align-self: center;
+}
+
+/*media*/
+
+@media (min-width: 768px) { 
+  /* Стили для устройств с маленьким экраном, размерами 768px - 991px (планшеты и подобные) */ 
+}
+@media (min-width: 1024px) and (max-width: 1279px) {  
+  /* Стили для ноутбуков и компьютеров с экранами в диапазоне 1300px */ 
+  .container {
+    width: 80%;
+  }
+  .shop_section {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+@media (min-width: 1280px) and (max-width: 1365px) {  
+  /* Стили для ноутбуков и компьютеров с экранами в диапазоне 1300px */ 
+  .container {
+    width: 90%;
+  }
+}
+@media (min-width: 1440px) and (max-width: 1680px){  
+  /* Стили для ноутбуков и компьютеров с экранами в диапазоне 1300px */ 
+  .container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1681px) and (max-width: 1920px){  
+  /* Стили для ноутбуков и компьютеров с экранами в диапазоне 1300px */ 
+  .main-app {
+    margin: 50px 80px;
+  }
+  .container {
+    width: 100%;
+    max-width: 1140px;
+  }
+  .main-app {
+    margin: 50px 200px;
+  }
 }
 

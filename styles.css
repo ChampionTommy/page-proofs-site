@@ -3,6 +3,7 @@
   margin: 0;
   font-family: 'Roboto', sans-serif;
 }
+
 input[type='radio'] {
   position: absolute;
   left: 0;
@@ -202,7 +203,7 @@ body {
   font-weight: 600;
 }
 
-/*cart.html*/
+/*cart*/
 
 /*cart button*/
 .cart {
